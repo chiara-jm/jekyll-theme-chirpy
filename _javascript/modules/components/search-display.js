@@ -7,17 +7,20 @@ const $btnCancel = $('#search-cancel');
 const $content = $('#main-wrapper>.container>.row');
 const $topbarTitle = $('#topbar-title');
 const $search = $('search');
+const $topbarRight = $('#topbar-right');
 const $resultWrapper = $('#search-result-wrapper');
 const $results = $('#search-results');
 const $input = $('#search-input');
 const $hints = $('#search-hints');
 const $viewport = $('html,body');
 
+
 // class names
 const C_LOADED = 'loaded';
 const C_UNLOADED = 'unloaded';
 const C_FOCUS = 'input-focus';
 const C_FLEX = 'd-flex';
+const C_FULL_W = 'full-width';
 
 class ScrollBlocker {
   static offset = 0;
@@ -40,6 +43,7 @@ class MobileSearchBar {
     $topbarTitle.addClass(C_UNLOADED);
     $btnSearchTrigger.addClass(C_UNLOADED);
     $search.addClass(C_FLEX);
+    $topbarRight.addClass(C_FULL_W);
     $btnCancel.addClass(C_LOADED);
   }
 
@@ -48,6 +52,7 @@ class MobileSearchBar {
     $search.removeClass(C_FLEX);
     $btnSbTrigger.removeClass(C_UNLOADED);
     $topbarTitle.removeClass(C_UNLOADED);
+    $topbarRight.removeClass(C_FULL_W);
     $btnSearchTrigger.removeClass(C_UNLOADED);
   }
 }
